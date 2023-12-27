@@ -1,7 +1,11 @@
 <script>
-	import Header from "../components/ui/Header.svelte";
+	import Hero from "../components/utils/Hero.svelte";
 </script>
 
-<Header/>
+<Hero/>
+<!-- <Features /> -->
+<!-- <FeaturesBlocks /> -->
+<!-- <Testimonials /> -->
+<!-- <Newsletter /> -->
 
 <!-- <button class="btn">Hello daisyUI</button> -->

@@ -40,6 +40,7 @@
 	"type": "module",
 	"dependencies": {
 		"@tailwindcss/forms": "^0.5.7",
-		"aos": "^2.3.4"
+		"aos": "^2.3.4",
+		"svelte-body": "^1.4.0"
 	}
 }

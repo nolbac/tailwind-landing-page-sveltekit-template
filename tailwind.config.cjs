@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config}*/
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
+
 	daisyui: {
 		themes: [
 			{
@@ -22,7 +23,7 @@ const config = {
 		extend: {}
 	},
 
-	plugins: [require('daisyui')]
+	plugins: [require('daisyui'), require('@tailwindcss/forms')]
 };
 
 module.exports = config;

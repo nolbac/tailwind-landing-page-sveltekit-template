@@ -1,3 +1,6 @@
+[https://joyofcode.xyz/sveltekit-with-tailwind-css](https://joyofcode.xyz/sveltekit-with-tailwind-css)
+[https://github.com/cruip/tailwind-landing-page-template](https://github.com/cruip/tailwind-landing-page-template)
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).

@@ -7,6 +7,7 @@
 	import "$lib/css/font-inter.pcss";
 	import '../app.pcss';
 	import 'aos/dist/aos.css';
+	import Banner from '../components/Banner.svelte';
 
 	export const metadata = {
 		title: 'Create Next App',
@@ -27,5 +28,5 @@
 <div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
 	<Header />
 		<slot />
-	<!-- <Banner /> -->
+	<Banner />
 </div>

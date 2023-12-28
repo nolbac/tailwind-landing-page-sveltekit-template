@@ -5,7 +5,7 @@
 	import { cubicOut } from 'svelte/easing';
     import FeaturesBg from '$lib/images/features-bg.png';
     import FeaturesElement from '$lib/images/features-element.png';
-	import BulletIcons from './ui/BulletIcons.svelte';
+	import IconBullets from './ui/IconBullets.svelte';
     let tab = 1;
     let tabsElement: HTMLElement | null;
     const tabButtonItems = [
@@ -86,7 +86,7 @@
                         <div class="text-gray-600">{tabButtonItem.content}</div>
                     </div>
                     <div class="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
-                        <BulletIcons icon={tabButtonItem.icon}/>
+                        <IconBullets icon={tabButtonItem.icon}/>
                     </div>
                 </a>
             {/each}

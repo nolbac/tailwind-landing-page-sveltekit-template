@@ -1,9 +1,10 @@
 <script>
+	import Features from "../components/Features.svelte";
 	import Hero from "../components/utils/Hero.svelte";
 </script>
 
 <Hero/>
-<!-- <Features /> -->
+<Features />
 <!-- <FeaturesBlocks /> -->
 <!-- <Testimonials /> -->
 <!-- <Newsletter /> -->

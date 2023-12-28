@@ -2,6 +2,7 @@
 	import Hero from "../components/utils/Hero.svelte";
 	import Features from "../components/Features.svelte";
 	import FeatureBlocks from "../components/FeatureBlocks.svelte";
+	import Testimonials from "../components/Testimonials.svelte";
 	import { pageMetadata } from '$lib/store';
 	pageMetadata.set({
 		title: 'Home - Simple',
@@ -12,7 +13,7 @@
 <Hero/>
 <Features />
 <FeatureBlocks />
-<!-- <Testimonials /> -->
+<Testimonials />
 <!-- <Newsletter /> -->
 
 <!-- <button class="btn">Hello daisyUI</button> -->

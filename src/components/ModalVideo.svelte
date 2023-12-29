@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fade, scale } from "svelte/transition";
+
     export let thumb: string; // Assuming this is a URL to the thumbnail image
     export let thumbWidth: number;
     export let thumbHeight: number;
@@ -10,6 +12,15 @@
 
     let modalOpen: boolean = false;
     let videoRef: HTMLVideoElement;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+            modalOpen = false;
+        }
+    }
+    const focus = (node: HTMLElement) => {
+        node.focus();
+    }
 </script>
 
 <div>
@@ -58,20 +69,26 @@
 
     <!-- Modal, you need to adjust this part according to Svelte's way of handling dialogs and transitions -->
     {#if modalOpen}
-        <div class="fixed inset-0 z-[99999] bg-black bg-opacity-75">
-            <!-- Modal content -->
-            <div class="fixed inset-0 z-[99999] overflow-hidden flex items-center justify-center">
-                <div class="max-w-6xl mx-auto h-full flex items-center">
-                    <div class="w-full max-h-full aspect-video bg-black overflow-hidden">
-                        <video bind:this={videoRef} width={videoWidth} height={videoHeight} loop controls>
-                            <source src={video} type="video/mp4" />
-                            <track kind="captions" src={captions} label="English" srclang="en" default />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <button on:click={() => modalOpen = false}>Close</button>
+    <div 
+      class="fixed inset-0 z-[99999] bg-black bg-opacity-75"
+      transition:fade={{ duration: 200 }}
+    >
+      <!-- Modal content -->
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <div
+        class="fixed inset-0 z-[99999] overflow-hidden flex items-center justify-center transform px-4 sm:px-6"
+        transition:scale={{ duration: 200, start: 0.95 }} on:click|self={() => modalOpen = false} on:keydown={handleKeyDown} aria-roledescription="Press Escape to Exit Modal."
+      >
+        <div class="max-w-6xl mx-auto h-full flex items-center" >
+          <div class="w-full max-h-full aspect-video bg-black overflow-hidden" transition:fade>
+            <video use:focus bind:this={videoRef} width={videoWidth} height={videoHeight} loop controls>
+              <source src={video} type="video/mp4" />
+              <track kind="captions" src={captions} label="English" srclang="en" default />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
-    {/if}
+      </div>
+    </div>
+  {/if}
 </div>

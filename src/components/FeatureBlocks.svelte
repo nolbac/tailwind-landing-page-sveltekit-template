@@ -1,5 +1,5 @@
 <script lang="ts">
-	import IconBadges from "./ui/IconBadges.svelte";
+	import IconBadges from "./ui/images/IconBadges.svelte";
 
     type itemCard = {
         title: string,

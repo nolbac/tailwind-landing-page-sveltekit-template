@@ -3,11 +3,12 @@
 	import { onMount } from 'svelte';
 	import AOS from 'aos';
 	import Header from '../components/ui/Header.svelte';
+	import Banner from '../components/Banner.svelte';
+	import Footer from '../components/ui/Footer.svelte';
 	// CSS
 	import "$lib/css/font-inter.pcss";
 	import '../app.pcss';
 	import 'aos/dist/aos.css';
-	import Banner from '../components/Banner.svelte';
 
 	import { pageMetadata } from '$lib/store';
 
@@ -21,9 +22,11 @@
 	<meta name="description" content={$pageMetadata.description}/>
 </svelte:head>
 <svelte:body use:classList={"font-inter antialiased bg-white text-gray-900 tracking-tight"}/>
-
-<div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
-	<Header />
-		<slot />
-	<Banner />
-</div>
+<main class="grow">
+	<div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+		<Header />
+			<slot />
+		<Banner />
+	</div>
+</main>
+<Footer/>

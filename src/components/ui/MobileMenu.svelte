@@ -2,53 +2,45 @@
   import { writable } from 'svelte/store';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
+	import { clickOutside } from '$lib/click-outside';
 
   let mobileNavOpen = writable(false);
   let trigger: HTMLButtonElement; // Declare trigger
   let mobileNav: HTMLElement; // Declare mobileNav
 
-
   // Event Handlers
-  function handleClickOutside(event: Event) {
-    if (event.target === null) return;
-    if (mobileNav && !mobileNav.contains(event.target) && !trigger.contains(event.target)) {
-      mobileNavOpen.set(false);
-    }
-  }
-
   function handleKeyDown(event: KeyboardEvent) {
     if (event.key === 'Escape') {
       mobileNavOpen.set(false);
     }
   }
 
-  onMount(() => {
-    document.addEventListener('click', handleClickOutside);
-    document.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
-  });
-
   // Toggle mobile nav
   function toggleMobileNav() {
     mobileNavOpen.update(n => !n);
   }
+  function closeMobileNav() {
+    mobileNavOpen.set(false);
+  }
 </script>
 
-<div class="flex md:hidden">
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div use:clickOutside on:keydown={handleKeyDown} on:clickOutside={() => mobileNavOpen.set(false)} class="flex md:hidden">
   <!-- Hamburger button -->
   <button
-  bind:this={trigger}
-  class="hamburger"
-  class:active={$mobileNavOpen}
-  aria-controls="mobile-nav"
-  aria-expanded={$mobileNavOpen}
-  on:click={toggleMobileNav}
->
-    <!-- SVG and other content -->
+    bind:this={trigger}
+    class="hamburger"
+    class:active={$mobileNavOpen}
+    aria-controls="mobile-nav"
+    aria-expanded={$mobileNavOpen}
+    on:click={toggleMobileNav}
+  >
+    <span class="sr-only">Menu</span>
+    <svg class="w-6 h-6 fill-current text-gray-900" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <rect y="4" width="24" height="2" />
+      <rect y="11" width="24" height="2" />
+      <rect y="18" width="24" height="2" />
+    </svg>
   </button>
 
   <!-- Mobile navigation -->
@@ -60,6 +52,19 @@
       transition:fade={{ duration: 200 }}
     >
       <!-- Nav content -->
+      <ul class="px-5 py-2">
+        <li>
+          <a href="/signin" class="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" on:click={closeMobileNav}>Sign in</a>
+        </li>
+        <li>
+          <a href="/signup" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2" on:click={closeMobileNav}>
+            <span>Sign up</span>
+            <svg class="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fill-rule="nonzero" />
+            </svg>
+          </a>
+        </li>
+      </ul>      
     </nav>
   {/if}
 </div>

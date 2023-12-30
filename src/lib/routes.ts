@@ -16,11 +16,11 @@ export const routes: { [id: string]: Link } = {
 		href: '/about'
 	},
 	signin: {
-		name: 'Sign In',
+		name: 'Sign in',
 		href: '/signin'
 	},
 	signup: {
-		name: 'Sign Up',
+		name: 'Sign up',
 		href: '/signup'
 	},
 	err404: {

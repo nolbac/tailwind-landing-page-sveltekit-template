@@ -1,4 +1,4 @@
-## Note
+## ❗ Note
 
 This project was originally made with [Next.js](https://nextjs.org/) by [Cruip.com](https://cruip.com/) in [the repository here](https://github.com/cruip/tailwind-landing-page-template). This repo uses **v2.4.0** of the project which was released under the _GPL License_.
 Thanks for the nice template 👍

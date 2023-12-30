@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { clickOutside } from "$lib/click-outside";
 	import { fade, scale } from "svelte/transition";
 
     export let thumb: string; // Assuming this is a URL to the thumbnail image
@@ -81,7 +82,7 @@
       >
         <div class="max-w-6xl mx-auto h-full flex items-center" >
           <div class="w-full max-h-full aspect-video bg-black overflow-hidden" transition:fade>
-            <video use:focus bind:this={videoRef} width={videoWidth} height={videoHeight} loop controls>
+            <video use:focus use:clickOutside on:clickOutside={() => modalOpen = false} bind:this={videoRef} width={videoWidth} height={videoHeight} loop controls>
               <source src={video} type="video/mp4" />
               <track kind="captions" src={captions} label="English" srclang="en" default />
               Your browser does not support the video tag.

@@ -1,20 +1,27 @@
 <script lang="ts">
-    export let error: any;
     import { page } from '$app/stores';
     import { pageMetadata } from '$lib/store';
+
+    const errorCode: number = $page.status;
+    let errorMessage = $page.error?.message
+    if (errorCode === 404) {
+        errorMessage = "This page could not be found.";
+    }
+
 	pageMetadata.set({
-		title: `Error: ${$page.status}`,
-		description: `Error: ${$page.error?.message}`
+		title: `Error: ${errorCode}`,
+		description: `${errorMessage}`
   	});
-    console.error(error);
+
+    console.error(`Error: ${errorCode}\n> ${$page.error?.message}`);
 
 </script>
 
 <div class="error-wrapper">
     <div>
-        <h1 class="error-code">{$page.status}</h1>
+        <h1 class="error-code">{errorCode}</h1>
         <div style="display: inline-block;">
-            <h2 class="error-message">Error: {$page.error?.message}</h2>
+            <h2 class="error-message">{errorMessage}</h2>
         </div>
     </div>
 </div>

@@ -22,11 +22,15 @@ export const routes: { [id: string]: Link } = {
 	signup: {
 		name: 'Sign Up',
 		href: '/signup'
+	},
+	err404: {
+		name: 'Error 404',
+		href: '/yippee!😃!'
 	}
 };
 
 export const navigation = [
-	routes.about,
+	routes.err404,
 	routes.signin,
 	{ ...routes.signup, style: 'black', icon: 'right-arrow' }
 ];

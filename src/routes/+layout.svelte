@@ -15,7 +15,8 @@
 	onMount(() => {
 		AOS.init({
 			once: true,
-			disable: "phone",
+			// disable: "phone",
+			disable: window.innerWidth < 768,
 			duration: 700,
 			easing: "ease-out-cubic",
 		});

@@ -12,7 +12,6 @@
     export let captions: string;
 
     let modalOpen: boolean = false;
-    let videoRef: HTMLVideoElement;
 
     const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === "Escape") {
@@ -82,7 +81,7 @@
       >
         <div class="max-w-6xl mx-auto h-full flex items-center" >
           <div class="w-full max-h-full aspect-video bg-black overflow-hidden" transition:fade>
-            <video use:focus use:clickOutside on:clickOutside={() => modalOpen = false} bind:this={videoRef} width={videoWidth} height={videoHeight} loop controls>
+            <video use:focus use:clickOutside on:clickOutside={() => modalOpen = false} width={videoWidth} height={videoHeight} loop controls>
               <source src={video} type="video/mp4" />
               <track kind="captions" src={captions} label="English" srclang="en" default />
               Your browser does not support the video tag.

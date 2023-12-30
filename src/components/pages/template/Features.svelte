@@ -5,7 +5,7 @@
 	import { cubicOut } from 'svelte/easing';
     import FeaturesBg from '$lib/images/features-bg.png';
     import FeaturesElement from '$lib/images/features-element.png';
-	import IconBullets from './ui/images/IconBullets.svelte';
+	import IconBullets from '$components/ui/images/IconBullets.svelte';
     let tab = 1;
     let tabsElement: HTMLElement | null;
     const tabButtonItems = [

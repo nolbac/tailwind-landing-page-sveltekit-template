@@ -1,21 +1,22 @@
-<script>
+<script lang="ts">
   import { writable } from 'svelte/store';
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
 
   let mobileNavOpen = writable(false);
-  let trigger; // Declare trigger
-  let mobileNav; // Declare mobileNav
+  let trigger: HTMLButtonElement; // Declare trigger
+  let mobileNav: HTMLElement; // Declare mobileNav
 
 
   // Event Handlers
-  function handleClickOutside(event) {
+  function handleClickOutside(event: Event) {
+    if (event.target === null) return;
     if (mobileNav && !mobileNav.contains(event.target) && !trigger.contains(event.target)) {
       mobileNavOpen.set(false);
     }
   }
 
-  function handleKeyDown(event) {
+  function handleKeyDown(event: KeyboardEvent) {
     if (event.key === 'Escape') {
       mobileNavOpen.set(false);
     }

@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import AOS from 'aos';
 	import Header from '../components/ui/Header.svelte';
-	import Banner from '../components/Banner.svelte';
+	import Banner from '../components/pages/template/Banner.svelte';
 	import Footer from '../components/ui/Footer.svelte';
 	// CSS
 	import "$lib/css/font-inter.pcss";

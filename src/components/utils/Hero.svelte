@@ -1,7 +1,7 @@
 <script lang="ts">
-	import ModalVideo from "../ModalVideo.svelte";
-    import VideoThumb from "$lib/images/hero-image.png";
-    import Video from "$lib/videos/video.mp4";
+  import ModalVideo from "$components/pages/template/ModalVideo.svelte";
+  import VideoThumb from "$lib/images/hero-image.png";
+  import Video from "$lib/videos/video.mp4";
 </script>
 <section class="relative">
 

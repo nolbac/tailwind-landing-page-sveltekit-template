@@ -1,6 +1,6 @@
 <script lang="ts">
   import TestimonialImage from "$lib/images/testimonial.jpg";
-  import CompanyLogos from "./ui/images/CompanyLogos.svelte";
+  import CompanyLogos from "$components/ui/images/CompanyLogos.svelte";
 
   let companies = ["facebook", "tinder", "airbnb", "hubspot", "amazon"];
 </script>

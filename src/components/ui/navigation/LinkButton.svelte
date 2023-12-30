@@ -18,7 +18,11 @@
         "black": "btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3",
     }
     if (isMobile) {
-        styleReference["none"] = "flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center";
+        styleReference = {
+            "none": "flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center",
+            "blue": "btn-sm text-blue-200 bg-blue-900 hover:bg-gray-800 w-full my-2",
+            "black": "btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2",
+        }
     }
 
     const classList = styleReference[styleColor];

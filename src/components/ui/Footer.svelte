@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Logo from "./Logo.svelte";
-</script>
 
+  const linkClasses = "text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out";
+</script>
 <footer>
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
@@ -14,7 +15,7 @@
             <Logo />
           </div>
           <div class="text-sm text-gray-600">
-            <a href="#0" class="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Terms</a> · <a href="#0" class="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</a>
+            <a href="#0" class={`${linkClasses} transition`}>Terms</a> · <a href="#0" class={`${linkClasses} transition`}>Privacy Policy</a>
           </div>
         </div>
 
@@ -23,19 +24,19 @@
           <h6 class="text-gray-800 font-medium mb-2">Products</h6>
           <ul class="text-sm">
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Web Studio</a>
+              <a href="#0" class={linkClasses}>Web Studio</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">DynamicBox Flex</a>
+              <a href="#0" class={linkClasses}>DynamicBox Flex</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Programming Forms</a>
+              <a href="#0" class={linkClasses}>Programming Forms</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Integrations</a>
+              <a href="#0" class={linkClasses}>Integrations</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Command-line</a>
+              <a href="#0" class={linkClasses}>Command-line</a>
             </li>
           </ul>
         </div>
@@ -45,19 +46,19 @@
           <h6 class="text-gray-800 font-medium mb-2">Resources</h6>
           <ul class="text-sm">
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Documentation</a>
+              <a href="#0" class={linkClasses}>Documentation</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Tutorials & Guides</a>
+              <a href="#0" class={linkClasses}>Tutorials & Guides</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Blog</a>
+              <a href="#0" class={linkClasses}>Blog</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Support Center</a>
+              <a href="#0" class={linkClasses}>Support Center</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Partners</a>
+              <a href="#0" class={linkClasses}>Partners</a>
             </li>
           </ul>
         </div>
@@ -67,19 +68,19 @@
           <h6 class="text-gray-800 font-medium mb-2">Company</h6>
           <ul class="text-sm">
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Home</a>
+              <a href="#0" class={linkClasses}>Home</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">About us</a>
+              <a href="#0" class={linkClasses}>About us</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Company values</a>
+              <a href="#0" class={linkClasses}>Company values</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Pricing</a>
+              <a href="#0" class={linkClasses}>Pricing</a>
             </li>
             <li class="mb-2">
-              <a href="#0" class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Privacy Policy</a>
+              <a href="#0" class={linkClasses}>Privacy Policy</a>
             </li>
           </ul>
         </div>

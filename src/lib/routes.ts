@@ -1,7 +1,8 @@
 type Link = {
 	name: string;
-	style?: Style;
 	href: string;
+	style?: Style;
+	icon?: string; // from IconBullets.svelte
 };
 export type Style = undefined | 'none' | 'blue' | 'black';
 export const styles = ['none', 'blue', 'black'];
@@ -25,8 +26,7 @@ export const routes: { [id: string]: Link } = {
 };
 
 export const navigation = [
-	routes.home,
 	routes.about,
 	routes.signin,
-	{ ...routes.signup, style: 'black' }
+	{ ...routes.signup, style: 'black', icon: 'right-arrow' }
 ];

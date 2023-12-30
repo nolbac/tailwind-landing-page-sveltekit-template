@@ -3,7 +3,7 @@
 	import IconBullets from "../images/IconBullets.svelte";
     
     export let href: string;
-    export let style: string;
+    export let style: string = "none";
     export let isMobile: boolean = false;
     export let icon: string = "none";
 
@@ -20,7 +20,7 @@
     if (isMobile) {
         styleReference["none"] = "flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center";
     }
-    
+
     const classList = styleReference[styleColor];
 </script>
 <a href={href} class={classList} {...$$restProps}>

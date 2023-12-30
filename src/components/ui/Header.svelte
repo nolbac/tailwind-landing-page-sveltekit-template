@@ -3,6 +3,8 @@
 	import Logo from "./Logo.svelte";
 	import MobileMenu from "./MobileMenu.svelte";
 	import IconBullets from './images/IconBullets.svelte';
+	import LinkButton from './navigation/LinkButton.svelte';
+	import Navigation from './navigation/Navigation.svelte';
 
 	// Reactive state declaration
 	let top = true;
@@ -36,17 +38,7 @@
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex md:grow">
           <!-- Desktop Sign in Links -->
-          <ul class="flex grow justify-end flex-wrap items-center">
-            <li>
-              <a href="/signin" class="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</a>
-            </li>
-            <li>
-              <a href="/signup" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
-                <span>Sign up</span>
-                <IconBullets icon="right-arrow"/>
-              </a>
-            </li>
-          </ul>
+          <Navigation class="flex grow justify-end flex-wrap items-center" />
 
         </nav>
 

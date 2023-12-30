@@ -4,6 +4,7 @@
   import { fade } from 'svelte/transition';
 	import { clickOutside } from '$lib/click-outside';
 	import IconBullets from './images/IconBullets.svelte';
+	import Navigation from './navigation/Navigation.svelte';
 
   let mobileNavOpen = writable(false);
   let trigger: HTMLButtonElement; // Declare trigger
@@ -53,17 +54,8 @@
       transition:fade={{ duration: 200 }}
     >
       <!-- Nav content -->
-      <ul class="px-5 py-2">
-        <li>
-          <a href="/signin" class="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" on:click={closeMobileNav}>Sign in</a>
-        </li>
-        <li>
-          <a href="/signup" class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2" on:click={closeMobileNav}>
-            <span>Sign up</span>
-            <IconBullets icon="right-bullet"/>
-          </a>
-        </li>
-      </ul>      
+      <Navigation isMobile={true} class="px-5 py-2" />
+  
     </nav>
   {/if}
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CompanyIcons from "./images/CompanyIcons.svelte";
+	import CompanyIcons from "$components/ui/images/CompanyIcons.svelte";
 
     type buttonConfig = {
         name: string,

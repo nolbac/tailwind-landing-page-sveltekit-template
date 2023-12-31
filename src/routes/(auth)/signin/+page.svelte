@@ -1,12 +1,18 @@
-<script>
-  import AuthButton from '../../../components/ui/AuthButton.svelte';
-	import CompanyIcons from '../../../components/ui/images/CompanyIcons.svelte';
-  
+<script lang="ts">
+  import AuthButton from '$components/ui/AuthButton.svelte';
+  import CompanyIcons from '$components/ui/images/CompanyIcons.svelte';
+	import { enhance } from '$app/forms';
+
   import { pageMetadata } from '$lib/store';
   pageMetadata.set({
         title: 'Sign In - Simple',
         description: 'Page description',
-    });
+  });
+
+  const myAlert = (e: Event) => {
+    e.preventDefault();
+    alert("Clicked Sign Up Provider");
+  }
 </script>
 
 <section class="bg-gradient-to-b from-gray-100 to-white">
@@ -20,7 +26,13 @@
 
         <!-- Form -->
         <div class="max-w-sm mx-auto">
-          <form>
+          <form
+              method="POST"
+              use:enhance={({ formElement, formData, action, cancel }) => {
+                  alert("Sign in Button Pressed");
+                  cancel();
+              }}
+          >
             <div class="flex flex-wrap -mx-3 mb-4">
               <div class="w-full px-3">
                 <label class="block text-gray-800 text-sm font-medium mb-1" for="email">Email</label>
@@ -48,8 +60,7 @@
             </div>
             <div class="flex flex-wrap -mx-3 mt-6">
               <div class="w-full px-3">
-                <!-- <button class="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Sign in</button> -->
-                <AuthButton on:click={() => alert("JS Signin")}>Sign in</AuthButton>
+                <AuthButton>Sign in</AuthButton>
               </div>
             </div>
           </form>
@@ -61,14 +72,14 @@
           <form>
             <div class="flex flex-wrap -mx-3 mb-3">
               <div class="w-full px-3">
-                <AuthButton style="github" on:click={() => alert("JS Popup Test")}>
+                <AuthButton style="github" on:click={myAlert}>
                   Continue with Github
                 </AuthButton>
               </div>
             </div>
             <div class="flex flex-wrap -mx-3">
               <div class="w-full px-3">
-                <AuthButton style="google" on:click={() => alert("JS Popup Test")}>
+                <AuthButton style="google" on:click={myAlert}>
                   Continue with Google
                 </AuthButton>
               </div>

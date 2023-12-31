@@ -48,7 +48,8 @@
             </div>
             <div class="flex flex-wrap -mx-3 mt-6">
               <div class="w-full px-3">
-                <button class="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Sign in</button>
+                <!-- <button class="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Sign in</button> -->
+                <AuthButton on:click={() => alert("JS Signin")}>Sign in</AuthButton>
               </div>
             </div>
           </form>
@@ -60,14 +61,14 @@
           <form>
             <div class="flex flex-wrap -mx-3 mb-3">
               <div class="w-full px-3">
-                <AuthButton buttonName="github" on:click={() => alert("JS Popup Test")}>
+                <AuthButton style="github" on:click={() => alert("JS Popup Test")}>
                   Continue with Github
                 </AuthButton>
               </div>
             </div>
             <div class="flex flex-wrap -mx-3">
               <div class="w-full px-3">
-                <AuthButton buttonName="google" on:click={() => alert("JS Popup Test")}>
+                <AuthButton style="google" on:click={() => alert("JS Popup Test")}>
                   Continue with Google
                 </AuthButton>
               </div>

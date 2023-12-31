@@ -38,10 +38,8 @@
                 <input id="password" type="password" class="form-input w-full text-gray-800" placeholder="Enter your password" required />
               </div>
             </div>
-            <div class="flex flex-wrap -mx-3 mt-6">
-              <div class="w-full px-3">
-                <button class="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Sign up</button>
-              </div>
+            <div class="flex flex-wrap">
+              <AuthButton on:click={() => alert("Sign up button")}>Sign up</AuthButton>
             </div>
             <div class="text-sm text-gray-500 text-center mt-3">
               By creating an account, you agree to the <a class="underline" href="#0">terms & conditions</a>, and our <a class="underline" href="#0">privacy policy</a>.
@@ -55,14 +53,14 @@
           <form>
             <div class="flex flex-wrap -mx-3 mb-3">
               <div class="w-full px-3">
-                <AuthButton buttonName="github" on:click={() => alert("JS Popup Test")}>
+                <AuthButton style="github" on:click={() => alert("JS Popup Test")}>
                   Continue with Github
                 </AuthButton>
               </div>
             </div>
             <div class="flex flex-wrap -mx-3">
               <div class="w-full px-3">
-                <AuthButton buttonName="google" on:click={() => alert("JS Popup Test")}>
+                <AuthButton style="google" on:click={() => alert("JS Popup Test")}>
                   Continue with Google
                 </AuthButton>
               </div>
